@@ -18,6 +18,10 @@ const config: Config = {
           600: '#2F6FEB',
         },
       },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        mono: ['var(--font-roboto-mono)'],
+      },
     },
     keyframes: {
       shimmer: {
