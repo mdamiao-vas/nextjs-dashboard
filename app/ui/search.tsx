@@ -15,12 +15,13 @@ export default function Search({ placeholder }: { placeholder: string }) {
     if (value == null) {
       return ""; // Return an empty string if value is null or undefined
     }
-    return value.replace(/[^a-zA-Z0-9]/g, ""); // Example: Remove non-alphanumeric characters
+    return value.replace(/[^a-zA-Z0-9@.]/g, ""); // Example: Remove non-alphanumeric characters
   }
 
   const handleSearch = useDebouncedCallback((term) => {
     console.log(`Searching... ${term}`);
     const params = new URLSearchParams(searchParams);
+    params.set("page", "1");
 
     if (term) {
       //params.set("query", term);
